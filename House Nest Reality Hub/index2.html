@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inline CSS and JavaScript Example</title>
+    <style>
+      /* styles.css */
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column; /* Change from row to column */
+      }
+
+      .sidebar {
+        width: 100%; /* Occupy full width */
+        height: 80px; /* Set desired height */
+        display: flex;
+        justify-content: space-around; /* Align items horizontally */
+        align-items: center; /* Center items vertically */
+        background: linear-gradient(135deg, #ff0000 0%, #ffa500 100%);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex; /* Make the menu items horizontal */
+      }
+
+      .sidebar ul li {
+        margin: 0 40px;
+        margin-bottom: 0px; /* Adjust spacing between menu items */
+      }
+
+      .sidebar ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        display: block;
+        padding: 10px;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+      }
+
+      .sidebar ul li a:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .main-content {
+        flex: 1;
+        padding: 20px;
+
+        background-image: url("https://t3.ftcdn.net/jpg/05/24/36/80/360_F_524368005_2ivR0ZW40PzF21Xxc0hPkqdXSxJ60oxb.jpg"); /* Specify the path to your image */
+        background-size: cover; /* Cover the entire background */
+        background-position: center; /* Center the background image */
+        min-height: 100vh;
+        color: #333;
+      }
+
+      .section {
+        display: none;
+      }
+
+      .section.active {
+        display: block;
+      }
+
+      /* Additional styling for the Home section */
+      #home {
+        text-align: center;
+      }
+
+      #home h1 {
+        color: #000000; /* Change to your desired color code */
+      }
+
+      #home button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #2575fc;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #home button:hover {
+        background-color: #0040bf;
+      }
+
+      /* Styling for the Profile form */
+      form#profile-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 400px;
+        margin: auto;
+      }
+
+      form#profile-form label {
+        font-weight: bold;
+      }
+
+      form#profile-form input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      form#profile-form button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #2575fc;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      form#profile-form button:hover {
+        background-color: #0040bf;
+      }
+      /* styles.css */
+
+      /* Existing styles */
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+      }
+
+      .section {
+        display: none;
+      }
+
+      .section.active {
+        display: block;
+      }
+
+      /* Additional styling for the Home section */
+      #home {
+        text-align: center;
+      }
+
+      .info-cards {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .info-card {
+        background: #fff;
+        background-color: #7fffd4;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        width: 250px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .info-card h2 {
+        margin-top: 0;
+        color: #ff0000;
+      }
+
+      .info-card p {
+        color: #555;
+        margin: 10px 0;
+      }
+
+      .info-card button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #2575fc;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .info-card button:hover {
+        background-color: #0040bf;
+      }
+
+      .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Styling for the Profile form */
+      form#profile-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 400px;
+        margin: auto;
+      }
+
+      form#profile-form label {
+        font-weight: bold;
+      }
+
+      form#profile-form input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      form#profile-form button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #2575fc;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      form#profile-form button:hover {
+        background-color: #0040bf;
+      }
+
+      .house-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Distribute space between items */
+        gap: 20px; /* Add some gap between items */
+        margin-top: 20px;
+      }
+
+      .house-card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: calc(
+          33.33% - 50px
+        ); /* Calculate width for 3 cards in a row with gap **************/
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .house-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+
+      .house-card h3 {
+        margin: 10px 0;
+        color: #2575fc;
+      }
+
+      .house-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .house-details {
+        display: none;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        max-width: 90%;
+        width: 400px;
+      }
+
+      .house-details h2 {
+        margin-top: 0;
+        color: #2575fc;
+      }
+
+      .house-details p {
+        margin: 10px 0;
+      }
+
+      .house-details button {
+        padding: 10px 20px;
+        background-color: #2575fc;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .house-details button:hover {
+        background-color: #0040bf;
+      }
+
+      /* Add these styles to your existing CSS file */
+
+      .settings-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+        margin-left: 80px;
+      }
+
+      .settings-buttons button {
+        padding: 10px 20px;
+        background-color: #2575fc;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 15px;
+        height: 40px; /* Set the height of the button */
+        width: 320px; /* Set the width of the button */
+        margin: 2px 0px;
+      }
+
+      .settings-buttons button:hover {
+        background-color: #0040b;
+      }
+      .settings-buttons button {
+        background-color: #d22b2b; /* Green */
+      }
+
+      .settings-buttons button:hover {
+        background-color: #45a049; /* Dark green */
+      }
+
+      form#profile-form button {
+        background-color: #d22b2b; /* Green */
+      }
+
+      form#profile-form button:hover {
+        background-color: #45a049; /* Dark green */
+      }
+      /* Add these styles to your existing CSS file */
+
+      .payment-options {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+
+      .payment-option {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 200px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .payment-option img {
+        width: 100px;
+        padding: 20px 0;
+      }
+
+      .payment-option h3 {
+        margin: 10px 0;
+        color: #2575fc;
+      }
+
+      .payment-option:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Styling for the search bar */
+      .search-bar {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .search-bar input {
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      /* Add this to your existing CSS file */
+
+      /* Container to hold the button and position it */
+      .houses-header {
+        display: flex;
+        justify-content: flex-end; /* Aligns the button to the right */
+        padding: 10px;
+      }
+
+      /* Styling for the upload button */
+      .upload-button {
+        position: absolute;
+        top: 150px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #2575fc;
+        color: #fff;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+      }
+
+      .upload-button:hover {
+        background-color: #0040bf;
+      }
+
+      /* CSS for the Payment Section */
+
+      #payment-form {
+        max-width: 400px;
+        margin: auto;
+      }
+
+      #payment-form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      #payment-form input[type="text"],
+      #payment-form input[type="file"] {
+        width: calc(100% - 20px); /* Adjust width to account for padding */
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box; /* Ensure padding doesn't increase element size */
+      }
+
+      #payment-proof {
+        margin-bottom: 20px; /* Larger margin for the file input */
+      }
+
+      #payment-form button[type="submit"] {
+        display: block; /* Make the button a block element to span full width */
+        width: 100%;
+        padding: 10px;
+        background-color: #ff0000;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #payment-form button[type="submit"]:hover {
+        background-color: #0040bf;
+      }
+
+      .image-details-container {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px; /* Adjust as needed */
+      }
+
+      .image-container {
+        flex: 1;
+      }
+
+      .image-container img {
+        width: 390px; /* Set the desired width */
+        height: 290px; /* Maintain aspect ratio */
+        border: 2px solid #000; /* Add a black stroke border */
+        border-radius: 5px; /* Optional: Add border radius for rounded corners */
+      }
+
+      .details-container {
+        flex: 1;
+        margin-left: -140px; /* Adjust as needed */
+      }
+
+      .details-content {
+        background-color: white; /* White background for details */
+        padding: 10px; /* Add padding for spacing */
+        border-radius: 5px; /* Optional: Add border radius for rounded corners */
+      }
+
+      #account-settings-options {
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #f4bb44;
+        margin-top: 20px;
+      }
+
+      #account-settings-options h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      #account-settings-options button {
+        padding: 8px 16px;
+        margin-bottom: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      #account-settings-options button:hover {
+        background-color: #0056b3;
+      }
+
+      #account-settings-options select {
+        padding: 8px;
+        margin-bottom: 10px;
+      }
+
+      #account-settings-options input[type="checkbox"] {
+        margin-bottom: 10px;
+      }
+
+      #account-settings-options label {
+        display: block;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: inline-block;
+        width: 180px;
+        font-weight: bold;
+      }
+
+      select,
+      input[type="checkbox"] {
+        width: 200px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .custom-notification {
+        margin-left: 20px;
+      }
+
+      .custom-notification label {
+        display: block;
+      }
+
+      .notification-settings-form {
+        background-color: #f4bb44;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+      }
+
+      /* Style for profile visibility */
+      #profile-visibility {
+        width: 200px; /* Adjust width as needed */
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+      }
+
+      /* Style for login activity logging */
+      #login-activity-logging {
+        width: 200px; /* Adjust width as needed */
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+      }
+
+      /* Style for password expiry policy */
+      #password-expiry-policy {
+        width: 200px; /* Adjust width as needed */
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+      }
+
+      #house-details {
+        background-color: white;
+        padding: 20px;
+        border: 10px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 0%; /* Adjust this value as needed */
+        height: 5%; /* Adjust this value as needed */
+        margin: 0 auto; /* Optional: to center the element */
+      }
+
+      .settings-container {
+        background-color: #f4bb44;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow effect */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <ul>
+          <li><a href="#" onclick="showSection('home')">Home</a></li>
+          <li><a href="#" onclick="showSection('profile')">Profile</a></li>
+          <li><a href="#" onclick="showSection('houses')">Houses</a></li>
+          <li><a href="#" onclick="showSection('payments')">Sell</a></li>
+          <li><a href="#" onclick="showSection('settings')">Settings</a></li>
+        </ul>
+      </div>
+
+      <div class="main-content">
+        <div id="home-details" class="section">
+          <h1 style="color: black">House Details</h1>
+
+          <p style="color: #000000; font-weight: bold">
+            Detailed information about the houses which are in sale
+          </p>
+          <!-- Add more content for the Home Details section here -->
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://is1-3.housingcdn.com/01c16c28/beea24e851ef48ecb3822547a2059d9e/v0/fs/3_bhk_independent_house-for-sale-vadavalli-Coimbatore-others.jpg"
+                alt="Image 1"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 1</h2>
+                <p>Road facilities: Asphalt road</p>
+                <p>Nearby facilities: Grocery store, park ,college ,airport</p>
+                <p>Square feet: 1500 sqft</p>
+                <p>
+                  Water facilities: 24/7 water supply from municipal corporation
+                </p>
+                <p>Previous owner: John Doe</p>
+                <p>Contact number: +1234567890</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://is1-3.housingcdn.com/01c16c28/b4e98427d514c2ca7edf80078d9f74e1/v0/fs/1_bhk_independent_house-for-sale-kalangal-Coimbatore-others.jpg"
+                alt="Image 1"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 2</h2>
+                <p>Road facilities: Paved road</p>
+                <p>Nearby facilities: Shopping mall, hospital, school</p>
+                <p>Square feet: 2000 sqft</p>
+                <p>Water facilities: Well water with pump system</p>
+                <p>Previous owner: Jane Smith</p>
+                <p>Contact number: +1987654321</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://www.coimbatoreproperty.com/projectsgallery/616/salepageimages/Arthy_Adhira_1.jpg"
+                alt="Image 1"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 3</h2>
+                <p>Road facilities: Concrete road</p>
+                <p>Nearby facilities: Gym, library, restaurant, bus stop</p>
+                <p>Square feet: 1800 sqft</p>
+                <p>Water facilities: Borewell water</p>
+                <p>Previous owner: Michael Johnson</p>
+                <p>Contact number: +9876543210</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://assets.architecturaldigest.in/photos/6051d3284cfb7d2fe3ff6bfa/4:3/w_1439,h_1079,c_limit/Coimbatore-home-architecture-interiors-photo.jpg"
+                alt="Image 1"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 4</h2>
+                <p>Road facilities: Gravel road</p>
+                <p>Nearby facilities: Pharmacy, playground, coffee shop</p>
+                <p>Square feet: 2200 sqft</p>
+                <p>Water facilities: Rainwater harvesting</p>
+                <p>Previous owner: Sarah Williams</p>
+                <p>Contact number: +1122334455</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://imagecdn.99acres.com/media1/24311/18/486238706M-1716610527629.jpg"
+                alt="Image 1"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 5</h2>
+                <p>Road facilities: Dirt road</p>
+                <p>Nearby facilities: Bank, post office, pet store</p>
+                <p>Square feet: 1700 sqft</p>
+                <p>Water facilities: Community well</p>
+                <p>Previous owner: David Brown</p>
+                <p>Contact number: +9988776655</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://i.pinimg.com/736x/51/44/a4/5144a44f6386a3b14de3d5ed21c3bf21.jpg"
+                alt="Image 1"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 6</h2>
+                <p>Road facilities: Cobblestone road</p>
+                <p>
+                  Nearby facilities: Movie theater, fitness center, public
+                  library
+                </p>
+                <p>Square feet: 1900 sqft</p>
+                <p>Water facilities: Tap water from local municipality</p>
+                <p>Previous owner: Emily Davis</p>
+                <p>Contact number: +1555666777</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?cs=srgb&dl=pexels-frans-van-heerden-201846-1438832.jpg&fm=jpg"
+                alt="Image 1"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 7</h2>
+                <p>Road facilities: Brick-paved road</p>
+                <p>
+                  Nearby facilities: Supermarket, elementary school, community
+                  center
+                </p>
+                <p>Square feet: 2500 sqft</p>
+                <p>Water facilities: Private well</p>
+                <p>Previous owner: Daniel Martinez</p>
+                <p>Contact number: +1666777888</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ3bAbW-D9bnCklNMNuYHQ2RKPARe27WCktg&s"
+                alt="Image 1"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 8</h2>
+                <p>Road facilities: Tarmac road</p>
+                <p>
+                  Nearby facilities: Coffee shop, fitness center, public park
+                </p>
+                <p>Square feet: 2100 sqft</p>
+                <p>Water facilities: Community water supply</p>
+                <p>Previous owner: Amanda Wilson</p>
+                <p>Contact number: +1223344556</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://www.theplancollection.com/Upload/Designers/126/2001/Plan1262001MainImage_21_11_2021_9_381_251.jpg"
+                alt="Image 1"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 9</h2>
+                <p>Road facilities: Gravel path</p>
+                <p>
+                  Nearby facilities: Bakery, playground, public transportation
+                </p>
+                <p>Square feet: 1800 sqft</p>
+                <p>Water facilities: Well water</p>
+                <p>Previous owner: Christopher Taylor</p>
+                <p>Contact number: +1888777666</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRbcrj53mGyk-u4JwrIb6z1RBAeCpxR78gfQ&s"
+                alt="Image 1"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 10</h2>
+                <p>Road facilities: Paved sidewalk</p>
+                <p>
+                  Nearby facilities: Swimming pool, dog park, public transit
+                  station
+                </p>
+                <p>Square feet: 2300 sqft</p>
+                <p>Water facilities: Private water supply</p>
+                <p>Previous owner: Samantha Jones</p>
+                <p>Contact number: +1444333222</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/5f34c68d2f35b8001c3c63f2.png"
+                alt="Image 1"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 11</h2>
+                <p>Road facilities: Tarmac street</p>
+                <p>Nearby facilities: Gym, pharmacy, playground</p>
+                <p>Square feet: 1900 sqft</p>
+                <p>Water facilities: Well water with filtration system</p>
+                <p>Previous owner: Liam Brown</p>
+                <p>Contact number: +1666777888</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_bEStQvbWqmQKAMzDcflFK-XH8PYKmxcGAA&s"
+                alt="Image 12"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 12</h2>
+                <p>Road facilities: Concrete pavement</p>
+                <p>Nearby facilities: Cafe, fitness studio, public library</p>
+                <p>Square feet: 2200 sqft</p>
+                <p>Water facilities: Rainwater harvesting system</p>
+                <p>Previous owner: Olivia Rodriguez</p>
+                <p>Contact number: +1888555666</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd0P-8jGLtQjo5Xcy0YxABxzwUQ5Fwgs0ATQ&sg"
+                alt="Image 14"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 13</h2>
+                <p>Road facilities: Concrete sidewalk</p>
+                <p>
+                  Nearby facilities: Restaurant, community center, public
+                  transit
+                </p>
+                <p>Square feet: 2100 sqft</p>
+                <p>Water facilities: City water supply</p>
+                <p>Previous owner: Sophia Hall</p>
+                <p>Contact number: +1777888999</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://www.theplancollection.com/Upload/Designers/126/2001/Plan1262001MainImage_21_11_2021_9_381_251.jpg"
+                alt="Image 14"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 14</h2>
+                <p>Road facilities: Tarred road</p>
+                <p>Nearby facilities: Hospital, park, shopping mall</p>
+                <p>Square feet: 2400 sqft</p>
+                <p>Water facilities: Underground water tank</p>
+                <p>Previous owner: Liam Wilson</p>
+                <p>Contact number: +1444222333</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://ssl.cdn-redfin.com/photo/94/mbphoto/990/genMid.7638990_2.jpg"
+                alt="Image 15"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 15</h2>
+                <p>Road facilities: Dirt track</p>
+                <p>Nearby facilities: Café, library, pharmacy</p>
+                <p>Square feet: 1800 sqft</p>
+                <p>Water facilities: Shared well with neighboring properties</p>
+                <p>Previous owner: Ava Martinez</p>
+                <p>Contact number: +1555777888</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://www.theplancollection.com/Upload/Designers/196/1098/Plan1961098MainImage_29_5_2019_15_381_251.jpg"
+                alt="Image 16"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 16</h2>
+                <p>Road facilities: Gravel driveway</p>
+                <p>Nearby facilities: Bank, school, public park</p>
+                <p>Square feet: 2200 sqft</p>
+                <p>Water facilities: Community water well</p>
+                <p>Previous owner: Noah Johnson</p>
+                <p>Contact number: +1666888999</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://www.shutterstock.com/image-photo/normal-house-somewhere-malaysia-260nw-2153722099.jpg"
+                alt="Image 17"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 17</h2>
+                <p>Road facilities: Brick-paved street</p>
+                <p>Nearby facilities: Gym, library, grocery store</p>
+                <p>Square feet: 2000 sqft</p>
+                <p>Water facilities: Municipal water supply</p>
+                <p>Previous owner: Isabella Clark</p>
+                <p>Contact number: +1222333444</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://pbs.twimg.com/media/EpRBLjMVoAAOySI.jpg:large"
+                alt="Image 18"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 18</h2>
+                <p>Road facilities: Cobblestone path</p>
+                <p>Nearby facilities: Cafe, park, public transportation</p>
+                <p>Square feet: 2100 sqft</p>
+                <p>Water facilities: Private well with filtration system</p>
+                <p>Previous owner: Alexander White</p>
+                <p>Contact number: +1333444555</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://www.houseplans.net/uploads/plans/30024/elevations/80062-414.jpg?v=121423151013"
+                alt="Image 19"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 19</h2>
+                <p>Road facilities: Concrete road</p>
+                <p>Nearby facilities: School, supermarket, park</p>
+                <p>Square feet: 2200 sqft</p>
+                <p>Water facilities: Community water source</p>
+                <p>Previous owner: Mia Johnson</p>
+                <p>Contact number: +1555666777</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+
+          <div class="image-details-container">
+            <div class="image-container">
+              <img
+                src="https://www.houseplans.net/uploads/plans/31254/elevations/85484-768.jpg?v=052124102655"
+                alt="Image 20"
+              />
+            </div>
+            <div class="details-container">
+              <div class="details-content">
+                <h2>Details for House 20</h2>
+                <p>Road facilities: Paved street</p>
+                <p>Nearby facilities: Grocery store, playground, bus stop</p>
+                <p>Square feet: 1900 sqft</p>
+                <p>Water facilities: Private well with pump</p>
+                <p>Previous owner: Ethan Cooper</p>
+                <p>Contact number: +1666999888</p>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+        </div>
+
+        <div id="home" class="section active">
+          <h1>Welcome to Smart Nest Reality Hub</h1>
+          <p style="color: #000000; font-weight: bold">Find your dream home</p>
+
+          <div class="info-cards">
+            <div class="info-card">
+              <h2>Latest Market Trends</h2>
+              <p>
+                Stay updated with the latest real estate market trends and
+                insights to make informed decisions.
+              </p>
+            </div>
+            <div class="info-card">
+              <h2>Investment Tips</h2>
+              <p>
+                Discover essential tips and strategies for investing in real
+                estate and maximizing your returns.
+              </p>
+            </div>
+            <div class="info-card">
+              <h2>Neighborhood Guides</h2>
+              <p>
+                Explore comprehensive guides on the best neighborhoods to live
+                in, considering amenities, safety, and more.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="profile" class="section">
+          <h1>User Profile</h1>
+          <form id="profile-form">
+            <label for="username" style="color: #000000; font-weight: bold"
+              >Username:</label
+            >
+            <input type="text" id="username" name="username" required />
+            <label for="firstname" style="color: #000000; font-weight: bold"
+              >First Name:</label
+            >
+            <input type="text" id="firstname" name="firstname" required />
+            <label for="lastname" style="color: #000000; font-weight: bold"
+              >Last Name:</label
+            >
+            <input type="text" id="lastname" name="lastname" required />
+            <label for="email" style="color: #000000; font-weight: bold"
+              >Email:</label
+            >
+            <input type="email" id="email" name="email" required />
+            <label for="password" style="color: #000000; font-weight: bold"
+              >Password:</label
+            >
+            <input type="password" id="password" name="password" required />
+            <label for="age" style="color: #000000; font-weight: bold"
+              >Age:</label
+            >
+            <input type="number" id="age" name="age" required />
+
+            <button type="button" onclick="updateProfile()">
+              Update Profile
+            </button>
+          </form>
+        </div>
+        <div id="houses" class="section">
+          <h1>Houses</h1>
+
+          <div class="houses-header">
+            <p style="color: #000; position: relative; top: -80px">
+              *Geotag images only
+            </p>
+
+            <button class="upload-button" onclick="showSection('payments')">
+              Upload
+            </button>
+          </div>
+
+          <div id="upload" class="section"></div>
+
+          <!-- Search bar for locations -->
+          <div class="search-bar">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search by location..."
+              onkeyup="searchHouses()"
+            />
+          </div>
+          <div class="house-grid">
+            <div class="house-card" onclick="showHouseDetails('house1')">
+              <a href="house1.html">
+                <img src="20240619_60547PMByGPSMapCamera.jpg" alt="House 1" />
+              </a>
+              <h3>House 1</h3>
+              <p class="location">Location:Vadavalli</p>
+            </div>
+            <div class="house-card" onclick="showHouseDetails('house2')">
+              <a href="house2.html">
+                <img src="20240619_60958PMByGPSMapCamera.jpg" alt="House 2" />
+              </a>
+              <h3>House 2</h3>
+              <p class="location">Location:Kalangal</p>
+            </div>
+            <div class="house-card" onclick="showHouseDetails('house3')">
+              <a href="house3.html">
+                <img src="20240619_61024PMByGPSMapCamera.jpg" alt="House 3" />
+              </a>
+              <h3>House 3</h3>
+              <p class="location">Location:Saravanampatti</p>
+            </div>
+
+            <div class="house-card" onclick="showHouseDetails('house4')">
+              <a href="house4.html">
+                <img src="20240619_61134PMByGPSMapCamera.jpg" alt="House 4" />
+              </a>
+              <h3>House 4</h3>
+              <p class="location">Location:Peelamedu</p>
+            </div>
+            <div class="house-card" onclick="showHouseDetails('house5')">
+              <a href="house5.html">
+                <img src="20240619_61152PMByGPSMapCamera.jpg" alt="House 5" />
+              </a>
+              <h3>House 5</h3>
+              <p class="location">Location:R.S. Puram</p>
+            </div>
+            <div class="house-card" onclick="showHouseDetails('house6')">
+              <a href="house6.html">
+                <img src="20240619_61211PMByGPSMapCamera.jpg" alt="House 6" />
+              </a>
+              <h3>House 6</h3>
+              <p class="location">Location:Sundarapuram</p>
+            </div>
+
+            <div class="house-card" onclick="showHouseDetails('house7')">
+              <a href="house7.html">
+                <img src="20240619_61234PMByGPSMapCamera.jpg" alt="House 7" />
+              </a>
+              <h3>House 7</h3>
+              <p class="location">Location:Malumichampatti</p>
+            </div>
+            <div class="house-card" onclick="showHouseDetails('house8')">
+              <a href="house8.html">
+                <img src="20240619_61245PMByGPSMapCamera.jpg" alt="House 8" />
+              </a>
+              <h3>House 8</h3>
+              <p class="location">Location:R.S. Puram</p>
+            </div>
+
+            <div class="house-card" onclick="showHouseDetails('house9')">
+              <a href="house9.html">
+                <img src="20240619_61315PMByGPSMapCamera.jpg" alt="House 9" />
+              </a>
+              <h3>House 9</h3>
+              <p class="location">Location:Pollachi</p>
+            </div>
+
+            <div class="house-card" onclick="showHouseDetails('house10')">
+              <a href="house10.html">
+                <img src="20240619_61321PMByGPSMapCamera.jpg" alt="House 10" />
+              </a>
+              <h3>House 10</h3>
+              <p class="location">Location:R.S. Puram</p>
+            </div>
+
+            <div class="house-card" onclick="showHouseDetails('house11')">
+              <a href="house11.html">
+                <img src="20240619_61725PMByGPSMapCamera.jpg" alt="House 11" />
+              </a>
+              <h3>House 11</h3>
+              <p class="location">Location:Gandhipuram</p>
+            </div>
+
+            <div class="house-card" onclick="showHouseDetails('house12')">
+              <a href="house12.html">
+                <img src="20240619_61745PMByGPSMapCamera.jpg" alt="House 12" />
+              </a>
+              <h3>House 12</h3>
+              <p class="location">Location:Ukkadam</p>
+            </div>
+
+            <div class="house-card" onclick="showHouseDetails('house13')">
+              <a href="house13.html">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd0P-8jGLtQjo5Xcy0YxABxzwUQ5Fwgs0ATQ&sg"
+                  alt="House 13"
+                />
+              </a>
+              <h3>House 13</h3>
+              <p class="location">Location:Eachanari</p>
+            </div>
+
+            <div class="house-card" onclick="showHouseDetails('house14')">
+              <a href="house14.html">
+                <img
+                  src="https://www.theplancollection.com/Upload/Designers/126/2001/Plan1262001MainImage_21_11_2021_9_381_251.jpg"
+                  alt="House 14"
+                />
+              </a>
+              <h3>House 14</h3>
+              <p class="location">Location:Eachanari</p>
+            </div>
+
+            <div class="house-card" onclick="showHouseDetails('house15')">
+              <a href="house15.html">
+                <img
+                  src="https://ssl.cdn-redfin.com/photo/94/mbphoto/990/genMid.7638990_2.jpg"
+                  alt="House 15"
+                />
+              </a>
+              <h3>House 15</h3>
+              <p class="location">Location:Gandhipuram</p>
+            </div>
+
+            <div class="house-card" onclick="showHouseDetails('house16')">
+              <a href="house16.html">
+                <img
+                  src="https://www.theplancollection.com/Upload/Designers/196/1098/Plan1961098MainImage_29_5_2019_15_381_251.jpg"
+                  alt="House 16"
+                />
+              </a>
+              <h3>House 16</h3>
+              <p class="location">Location:Saravanampatti</p>
+            </div>
+
+            <div class="house-card" onclick="showHouseDetails('house17')">
+              <a href="house17.html">
+                <img
+                  src="https://www.shutterstock.com/image-photo/normal-house-somewhere-malaysia-260nw-2153722099.jpg"
+                  alt="House 17"
+                />
+              </a>
+              <h3>House 17</h3>
+              <p class="location">Location:Peelamedu</p>
+            </div>
+
+            <div class="house-card" onclick="showHouseDetails('house18')">
+              <a href="house18.html">
+                <img
+                  src="https://pbs.twimg.com/media/EpRBLjMVoAAOySI.jpg:large"
+                  alt="House 18"
+                />
+              </a>
+              <h3>House 18</h3>
+              <p class="location">Location:Pollachi</p>
+            </div>
+
+            <div class="house-card" onclick="showHouseDetails('house19')">
+              <a href="house19.html">
+                <img
+                  src="https://www.houseplans.net/uploads/plans/30024/elevations/80062-414.jpg?v=121423151013"
+                  alt="House 19"
+                />
+              </a>
+              <h3>House 19</h3>
+              <p class="location">Location:Sundarapuram</p>
+            </div>
+
+            <div class="house-card" onclick="showHouseDetails('house20')">
+              <a href="house20.html">
+                <img
+                  src="https://www.houseplans.net/uploads/plans/31254/elevations/85484-768.jpg?v=052124102655"
+                  alt="House 20"
+                />
+              </a>
+              <h3>House 20</h3>
+              <p class="location">Location:Kalangal</p>
+            </div>
+          </div>
+          <div id="house-details" class="house-details">
+            <h2 id="house-name"></h2>
+            <p id="house-rooms"></p>
+            <p id="house-rent"></p>
+            <p id="house-sale"></p>
+            <p id="house-additional-feature"></p>
+            <button onclick="hideHouseDetails()">Close</button>
+          </div>
+        </div>
+
+        <div id="payments" class="section">
+          <h2>Selling Section</h2>
+          <form id="payment-form">
+            <label for="name" style="color: #000">Name:</label>
+            <input type="text" id="name" name="name" required /><br />
+
+            <label for="address" style="color: #000">Address:</label>
+            <input type="text" id="address" name="address" required /><br />
+
+            <label for="card-number" style="color: #000">Mobile Number:</label>
+            <input
+              type="text"
+              id="card-number"
+              name="card-number"
+              required
+            /><br />
+
+            <label for="expiry-date" style="color: #000">House Style:</label>
+            <input
+              type="text"
+              id="expiry-date"
+              name="expiry-date"
+              required
+            /><br />
+
+            <label
+              for="slot-type"
+              style="
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                color: black;
+                margin-right: 10px;
+              "
+              >Water facilities:</label
+            >
+            <select
+              id="slot-type"
+              name="slot-type"
+              style="
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                width: 380px;
+                height: 35px;
+              "
+            >
+              <option value="regular">Corporation Water</option>
+              <option value="premium">Well Water</option>
+              <option value="borewell">Borewell Water</option>
+              <option value="river">River Water</option>
+              <option value="rain">Rainwater Harvesting</option>
+            </select>
+            <br /><br />
+
+            <label for="expiry-date" style="color: #000">Previous owner:</label>
+            <input
+              type="text"
+              id="expiry-date"
+              name="expiry-date"
+              required
+            /><br />
+
+            <label for="expiry-date" style="color: #000"
+              >Previous owner details:</label
+            >
+            <input
+              type="text"
+              id="expiry-date"
+              name="expiry-date"
+              required
+            /><br />
+
+            <label for="cvv" style="color: #000">Price:</label>
+            <input type="text" id="cvv" name="cvv" required /><br />
+
+            <label for="name" style="color: #000">Upload house picture</label>
+            <input
+              type="file"
+              id="payment-proof"
+              name="payment-proof"
+              accept="image/*"
+              required
+              style="background-color: white"
+            />
+
+            <br />
+
+            <br />
+
+            <button type="submit" style="width: 380px">Submit</button>
+          </form>
+        </div>
+
+        <div id="settings" class="section">
+          <h1 style="color: black">Settings</h1>
+          <div class="settings-buttons">
+            <button
+              class="btn-account-settings"
+              onclick="toggleAccountSettings()"
+            >
+              Account Settings
+            </button>
+
+            <button
+              class="btn-notifications-settings"
+              onclick="toggleNotificationsSettings()"
+            >
+              Notifications Settings
+            </button>
+
+            <button
+              class="btn-security-settings"
+              onclick="toggleSecuritySettings()"
+            >
+              Security Settings
+            </button>
+
+            <button onclick="logout()">Log Out</button>
+          </div>
+
+          <hr />
+
+          <div id="account-settings-options" style="display: none">
+            <!-- Content for the account settings options goes here -->
+            <h2 style="color: #000">Account Settings</h2>
+            <br />
+            <h2>Password Management</h2>
+            <button onclick="changePassword()">Change Password</button>
+
+            <h2>Email Preferences</h2>
+            <input type="checkbox" id="newsletter" checked />
+            <label for="newsletter">Subscribe to Newsletter</label><br />
+            <input type="checkbox" id="promotion" />
+            <label for="promotion">Receive Promotional Emails</label><br />
+
+            <h2>Account Deactivation</h2>
+            <button onclick="deactivateAccount()">Deactivate Account</button>
+
+            <h2>Language and Region</h2>
+            <label for="language">Select Language:</label>
+            <select id="language">
+              <option value="en">English</option>
+              <option value="fr">French</option>
+              <option value="es">Spanish</option>
+            </select>
+            <br /><br />
+            <label for="region">Select Region:</label>
+            <select id="region">
+              <option value="us">United States</option>
+              <option value="uk">United Kingdom</option>
+              <option value="fr">France</option>
+              <option value="es">Spain</option>
+            </select>
+          </div>
+
+          <div
+            id="notifications-settings-section"
+            class="settings-section"
+            style="display: none"
+          >
+            <h2 style="color: #000">Notification Settings</h2>
+            <form
+              id="notification-settings-form"
+              class="notification-settings-form"
+            >
+              <!-- Notification settings content here -->
+              <h2 style="color: #000">Notification Settings</h2>
+              <form id="notification-settings-form">
+                <div class="form-group">
+                  <label for="email-notifications" style="width: 200px"
+                    >Email Notifications:</label
+                  >
+                  <select
+                    id="email-notifications"
+                    name="email-notifications"
+                    style="width: 200px"
+                  >
+                    <option value="all">All Notifications</option>
+                    <option value="important">Only Important</option>
+                    <option value="none">None</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="sms-notifications">SMS Notifications:</label>
+                  <select
+                    id="sms-notifications"
+                    name="sms-notifications"
+                    style="width: 200px"
+                  >
+                    <option value="all">All Notifications</option>
+                    <option value="important">Only Important</option>
+                    <option value="none">None</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="push-notifications">Push Notifications:</label>
+                  <select
+                    id="push-notifications"
+                    name="push-notifications"
+                    style="width: 200px"
+                  >
+                    <option value="all">All Notifications</option>
+                    <option value="important">Only Important</option>
+                    <option value="none">None</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="notification-frequency"
+                    >Notification Frequency:</label
+                  >
+                  <select
+                    id="notification-frequency"
+                    name="notification-frequency"
+                    style="width: 200px"
+                  >
+                    <option value="immediately">Immediately</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="custom-notifications"
+                    >Custom Notifications:</label
+                  >
+                  <div id="custom-notifications">
+                    <div class="custom-notification">
+                      <input type="checkbox" id="custom1" name="custom1" />
+                      <label for="custom1"
+                        >Notify me when a new message is received</label
+                      >
+                    </div>
+                    <div class="custom-notification">
+                      <input type="checkbox" id="custom2" name="custom2" />
+                      <label for="custom2"
+                        >Notify me about promotional offers</label
+                      >
+                    </div>
+                    <!-- Add more custom notifications as needed -->
+                  </div>
+                </div>
+              </form>
+            </form>
+          </div>
+
+          <div
+            id="security-settings-options"
+            class="settings-options"
+            style="display: none"
+          >
+            <!-- Content for the security settings options goes here -->
+            <h2 style="color: #000">Security Settings</h2>
+            <br />
+            <div class="settings-container">
+              <label for="profile-visibility">Profile Visibility:</label><br />
+              <select id="profile-visibility" name="profile-visibility">
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+                <option value="custom">Custom</option></select
+              ><br /><br /><br />
+
+              <label for="login-activity-logging">Login Activity Logging:</label
+              ><br />
+              <select id="login-activity-logging" name="login-activity-logging">
+                <option value="enabled">Enabled</option>
+                <option value="disabled">Disabled</option></select
+              ><br /><br /><br />
+
+              <label for="password-expiry-policy">Password Expiry Policy:</label
+              ><br />
+              <select id="password-expiry-policy" name="password-expiry-policy">
+                <option value="30">Every 30 days</option>
+                <option value="60">Every 60 days</option>
+                <option value="90">Every 90 days</option>
+                <option value="never">Never</option></select
+              ><br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    // app.js
+
+    function showSection(sectionId) {
+      // Hide all sections
+      const sections = document.querySelectorAll(".section");
+      sections.forEach((section) => section.classList.remove("active"));
+
+      // Show the selected section
+      const selectedSection = document.getElementById(sectionId);
+      if (selectedSection) {
+        selectedSection.classList.add("active");
+      }
+    }
+
+    // Show the home section by default
+    document.addEventListener("DOMContentLoaded", () => {
+      showSection("home");
+    });
+
+    function updateProfile() {
+      // Get form data
+      const form = document.getElementById("profile-form");
+      const formData = new FormData(form);
+
+      // Convert FormData to an object
+      const profileData = {};
+      formData.forEach((value, key) => {
+        profileData[key] = value;
+      });
+
+      console.log("Profile Updated:", profileData);
+
+      // TODO: Implement the logic to send the data to the server or handle it as needed
+    }
+    // app.js
+
+    function showSection(sectionId) {
+      // Hide all sections
+      const sections = document.querySelectorAll(".section");
+      sections.forEach((section) => section.classList.remove("active"));
+
+      // Show the selected section
+      const selectedSection = document.getElementById(sectionId);
+      if (selectedSection) {
+        selectedSection.classList.add("active");
+      }
+    }
+
+    // Show the home section by default
+    document.addEventListener("DOMContentLoaded", () => {
+      showSection("home");
+    });
+
+    function updateProfile() {
+      // Get form data
+      const form = document.getElementById("profile-form");
+      const formData = new FormData(form);
+
+      // Convert FormData to an object
+      const profileData = {};
+      formData.forEach((value, key) => {
+        profileData[key] = value;
+      });
+
+      console.log("Profile Updated:", profileData);
+
+      // TODO: Implement the logic to send the data to the server or handle it as needed
+    }
+    // app.js
+
+    // Existing functions
+
+    const houses = {
+      house1: {
+        name: "House 1 ",
+        rooms:
+          "3 rooms \n Road facilities: Asphalt road \n Nearby facilities: Grocery store, park ,college ,airport \n Water facilities: 24/7 water from municipal corporation \n Previous owner: John Doe \n Contact number: +1234567890 \n Style: MODERN \n For Sale: Rs.300,000",
+
+        // rent: document.createElement("img"),
+        // sale: "Rs.300,000"
+      },
+      house2: {
+        name: "House 2",
+        rooms:
+          "4 rooms \n Road facilities: Gravel road \n Nearby facilities: Hospital, shopping mall, gym \n Water facilities: Well water with filtration system \n Previous owner: Jane Smith \n Contact number: +9876543210 \n Style: VINTAGE \n For Sale: Rs.500,000",
+        //  rent: "CLASSIC",
+        //  sale: "Rs.400,000"
+      },
+      house3: {
+        name: "House 3",
+        rooms:
+          "2 rooms \n Road facilities: Paved road \n Nearby facilities: School, playground, library \n Water facilities: Private well \n Previous owner: Michael Johnson \n Contact number: +1112223333 \n Style: CONTEMPORARY \n For Sale: Rs.250,000",
+        //  rent: "LUXURY",
+        // sale: "Rs.500,000"
+      },
+      house4: {
+        name: "House 4",
+        rooms:
+          "5 rooms \n Road facilities: Dirt road \n Nearby facilities: Supermarket, public park, \n Water facilities: Rainwater harvesting system \n Previous owner: Sarah Williams \n Contact number: +9998887777 \n Style: RUSTIC \n For Sale: Rs.400,000",
+        //  rent: "PREMIUM",
+        //  sale: "Rs.250,000"
+      },
+      house5: {
+        name: "House 5",
+        rooms:
+          "3 rooms \n Road facilities: Concrete road \n Nearby facilities: Pharmacy, fitness center, cafe \n Water facilities: Borewell \n Previous owner: David Brown \n Contact number: +7776665555 \n Style: MINIMALIST \n For Sale: Rs.350,000",
+        //   rent: "CLASSIC",
+        //   sale: "Rs.600,000"
+      },
+      house6: {
+        name: "House 6",
+        rooms:
+          "6 rooms \n Road facilities: Cobblestone road \n Nearby facilities: Bank, restaurant, public library \n Water facilities: Community water supply \n Previous owner: Emily Davis \n Contact number: +4443332222 \n Style: CLASSIC \n For Sale: Rs.600,000",
+        //   rent: "CONTEMPORARY",
+        //  sale: "Rs.700,000"
+      },
+      house7: {
+        name: "House 7",
+        rooms:
+          "4 rooms \n Road facilities: Gravel road \n Nearby facilities: Post office, swimming pool, tennis court \n Water facilities: Well water \n Previous owner: Robert Johnson \n Contact number: +5554443333 \n Style: VINTAGE \n For Sale: Rs.380,000",
+        //    rent: "CONTEMPORARY",
+        //    sale: "Rs.500,000"
+      },
+      house8: {
+        name: "House 8",
+        rooms:
+          "3 rooms \n Road facilities: Brick-paved road \n Nearby facilities: Public transport, daycare \n Water facilities: Municipal water supply \n Previous owner: Mary Thompson \n Contact number: +2223334444 \n Style: CONTEMPORARY \n For Sale: Rs.420,000",
+        //    rent: "CLASSIC",
+        //    sale: "Rs.5550,000"
+      },
+      house9: {
+        name: "House 9",
+        rooms:
+          "5 rooms \n Road facilities: Asphalt road \n Nearby facilities: Gym, playground, restaurant \n Water facilities: Well water with purification system \n Previous owner: Andrew Wilson \n Contact number: +7778889999 \n Style: MODERN \n For Sale: Rs.480,000",
+        //   rent: "VINTAGE",
+        //   sale: "Rs.600,000"
+      },
+      house10: {
+        name: "House 10",
+        rooms:
+          "2 rooms \n Road facilities: Gravel road \n Nearby facilities: School, grocery store, hospital \n Water facilities: Private well \n Previous owner: Sarah Martinez \n Contact number: +1112223333 \n Style: RURAL \n For Sale: Rs.200,000",
+        //   rent: "LUXURY",
+        //   sale: "Rs.400,000"
+      },
+      house11: {
+        name: "House 11",
+        rooms:
+          "3 rooms \n Road facilities: Gravel road \n Nearby facilities: Library, pharmacy, community center \n Water facilities: Well water with filtration \n Previous owner: Jennifer Lee \n Contact number: +1234567890 \n Style: COTTAGE \n For Sale: Rs.280,000",
+        //   rent: "PREMIUM",
+        //  sale: "Rs.500,000"
+      },
+      house12: {
+        name: "House 12",
+        rooms:
+          "4 rooms \n Road facilities: Concrete road \n Nearby facilities: Park, shopping mall, coffee shop \n Water facilities: Municipal water supply \n Previous owner: Jason Miller \n Contact number: +9998887777 \n Style: CONTEMPORARY \n For Sale: Rs.350,000",
+        //    rent: "MODERN",
+        //   sale: "Rs.550,000"
+      },
+      house13: {
+        name: "House 13",
+        rooms:
+          "6 rooms \n Road facilities: Paved road \n Nearby facilities: School, hospital, supermarket \n Water facilities: Borewell with pump \n Previous owner: Thomas Johnson \n Contact number: +9876543210 \n Style: COLONIAL \n For Sale: Rs.600,000",
+        //    rent: "LUXURY",
+        //   sale: "Rs.600,000"
+      },
+      house14: {
+        name: "House 14",
+        rooms:
+          "2 rooms \n Road facilities: Dirt road \n Nearby facilities: Playground, convenience store, bus stop \n Water facilities: Rainwater collection system \n Previous owner: Emma Davis \n Contact number: +1112223333 \n Style: ECO-FRIENDLY \n For Sale: Rs.180,000",
+        //    rent: "CLASSIC",
+        //    sale: "Rs.500,000"
+      },
+      house15: {
+        name: "House 15",
+        rooms:
+          "4 rooms \n Road facilities: Cobblestone road \n Nearby facilities: Bank, restaurant, public park \n Water facilities: Community well \n Previous owner: William Brown \n Contact number: +5556667777 \n Style: TRADITIONAL \n For Sale: Rs.420,000",
+        //    rent: "MODERN",
+        //    sale: "Rs.550,000"
+      },
+      house16: {
+        name: "House 16",
+        rooms:
+          "3 rooms \n Road facilities: Concrete road \n Nearby facilities: Fitness center, grocery store, cafe \n Water facilities: Municipal water supply \n Previous owner: Samantha Wilson \n Contact number: +3334445555 \n Style: MODERN \n For Sale: Rs.320,000",
+        //    rent: "Rs.2000 per month",
+        //    sale: "Rs.400,000"
+      },
+      house17: {
+        name: "House 17",
+        rooms:
+          "5 rooms \n Road facilities: Gravel road \n Nearby facilities: School, shopping mall, hospital \n Water facilities: Private well \n Previous owner: Michael Anderson \n Contact number: +7778889999 \n Style: RUSTIC \n For Sale: Rs.450,000",
+        //    rent: "CLASSIC",
+        //    sale: "Rs.500,000"
+      },
+      house18: {
+        name: "House 18",
+        rooms:
+          "2 rooms \n Road facilities: Brick-paved road \n Nearby facilities: Post office, swimming pool, library \n Water facilities: Community water supply \n Previous owner: Olivia Taylor \n Contact number: +9990001111 \n Style: CONTEMPORARY \n For Sale: Rs.280,000",
+        //    rent: "MODERN",
+        //    sale: "Rs.550,000"
+      },
+      house19: {
+        name: "House 19",
+        rooms:
+          "3 rooms \n Road facilities: Asphalt road \n Nearby facilities: Grocery store, park, college \n Water facilities: 24/7 water from municipal corporation \n Previous owner: Emily White \n Contact number: +5556667777 \n Style: CONTEMPORARY \n For Sale: Rs.350,000",
+        //    rent: "VINTAGE",
+        //    sale: "Rs.600,000"
+      },
+      house20: {
+        name: "House 20",
+        rooms:
+          "4 rooms \n Road facilities: Gravel road \n Nearby facilities: Pharmacy, community center, bakery \n Water facilities: Well water with purification system \n Previous owner: Daniel Harris \n Contact number: +8889990000 \n Style: COUNTRY \n For Sale: Rs.400,000",
+        //    rent: "VINTAGE",
+        //    sale: "Rs.400,000"
+      },
+    };
+
+    function showHouseDetails(houseId) {
+      // const house = houses[houseId];
+      //  document.getElementById("house-name").innerText = house.name;
+      //  document.getElementById("house-rooms").innerText = `Rooms: ${house.rooms}`;
+      //  document.getElementById("house-rent").innerText = `Style: ${house.rent}`;
+      //  document.getElementById('house-sale').innerText = `For Sale: ${house.sale}`;
+      // Increase text size for rooms detail
+      // document.getElementById("house-rooms").style.fontSize = "25px"; // Adjust the size as needed
+      //  document.getElementById("house-details").style.display = "block";
+    }
+
+    function hideHouseDetails() {
+      document.getElementById("house-details").style.display = "none";
+    }
+    // Add these functions to your existing JavaScript file
+
+    function showSettings(settingType) {
+      // Show settings content based on the settingType
+      // You can implement this function to display different settings based on the button clicked
+      console.log(`Show ${settingType} settings`);
+    }
+
+    function logout() {
+      // Perform logout action here
+      console.log("Logged out");
+      // You may want to redirect the user to the login page or perform other actions after logout
+    }
+    // Add these functions to your existing JavaScript file
+
+    function selectPayment(paymentMethod) {
+      // Implement logic to handle the selected payment method
+      console.log(`Selected payment method: ${paymentMethod}`);
+      // You can perform further actions based on the selected payment method
+    }
+    // Add these functions to your existing JavaScript file
+
+    // Existing functions...
+
+    function searchHouses() {
+      const searchInput = document
+        .getElementById("search-input")
+        .value.toLowerCase();
+      const houseCards = document.querySelectorAll(".house-card");
+
+      houseCards.forEach((card) => {
+        const location = card
+          .querySelector(".location")
+          .textContent.toLowerCase();
+        if (location.includes(searchInput)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    function updateProfile() {
+      // Get the values of the input fields
+      var username = document.getElementById("username").value;
+      var firstname = document.getElementById("firstname").value;
+      var lastname = document.getElementById("lastname").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var age = document.getElementById("age").value;
+
+      // Check if any required field is empty
+      if (!username || !firstname || !lastname || !email || !password || !age) {
+        // If any required field is empty, show an alert message
+        alert("Please fill out all the fields.");
+      } else {
+        // Perform the profile update process here
+        // For demonstration purposes, let's assume the profile update was successful
+        // You can replace this with your actual update logic
+
+        // Show a pop-up message indicating success
+        alert("Profile updated successfully!");
+      }
+    }
+
+    function toggleAccountSettings() {
+      var accountSettingsOptions = document.getElementById(
+        "account-settings-options"
+      );
+      if (accountSettingsOptions.style.display === "none") {
+        accountSettingsOptions.style.display = "block";
+      } else {
+        accountSettingsOptions.style.display = "none";
+      }
+    }
+
+    function toggleNotificationsSettings() {
+      var notificationsSettingsSection = document.getElementById(
+        "notifications-settings-section"
+      );
+      if (notificationsSettingsSection.style.display === "none") {
+        notificationsSettingsSection.style.display = "block";
+      } else {
+        notificationsSettingsSection.style.display = "none";
+      }
+    }
+
+    function toggleSecuritySettings() {
+      var securitySettingsOptions = document.getElementById(
+        "security-settings-options"
+      );
+      if (securitySettingsOptions.style.display === "none") {
+        securitySettingsOptions.style.display = "block";
+      } else {
+        securitySettingsOptions.style.display = "none";
+      }
+    }
+
+    function logout() {
+      // Perform logout logic here, such as clearing session data
+      // Show a pop-up message
+      alert("Logged out successfully");
+    }
+
+    document
+      .getElementById("payment-proof")
+      .addEventListener("change", function () {
+        var fileInput = document.getElementById("payment-proof");
+        var filePath = fileInput.value;
+        var allowedExtensions = /(\.jpg|\.jpeg|\.gif)$/i;
+        if (!allowedExtensions.exec(filePath)) {
+          alert("Please upload geo tag photos only.");
+          fileInput.value = "";
+          return false;
+        }
+      });
+  </script>
+</html>

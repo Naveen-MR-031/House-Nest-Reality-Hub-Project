@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+        background-image: url("https://t3.ftcdn.net/jpg/05/24/36/80/360_F_524368005_2ivR0ZW40PzF21Xxc0hPkqdXSxJ60oxb.jpg");
+        background-size: cover;
+        background-position: center;
+        color: #333;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        max-width: 1200px;
+        background: rgba(
+          255,
+          255,
+          255,
+          0.8
+        ); /* Semi-transparent white background for readability */
+        border-radius: 10px; /* Optional: Rounded corners */
+        overflow: hidden; /* Optional: Ensure content doesn't overflow */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Optional: Box shadow for container */
+      }
+
+      .back-button-container {
+        padding: 10px;
+        text-align: left;
+      }
+
+      .back-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .image-details-container {
+        display: flex;
+        flex: 1;
+      }
+
+      .image-container {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+        display: block; /* Ensure image stays within its container */
+      }
+
+      .details-container {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .details-content {
+        max-width: 400px; /* Adjust max-width as needed */
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin-top: 0;
+      }
+
+      h3 {
+        margin-bottom: 5px;
+      }
+    </style>
+    <title>House Details</title>
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="back-button-container">
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
+      <div class="image-details-container">
+        <div class="image-container">
+          <img
+            src="https://www.houseplans.net/uploads/plans/31254/elevations/85484-768.jpg?v=052124102655"
+            alt="House Image"
+          />
+        </div>
+        <div class="details-container">
+          <div class="details-content">
+            <h1>House 20</h1>
+            <h2>Details for House 20</h2>
+            <h3>Rooms: 8</h3>
+            <h3>Style: Mediterranean</h3>
+            <h3>Road facilities: Concrete road</h3>
+            <h3>Nearby facilities: Beach, marina, upscale shopping</h3>
+            <h3>Square feet: 2800 sqft</h3>
+            <h3>Water facilities: Desalination plant</h3>
+            <h3>Previous owner: Megan Davis</h3>
+            <h3>Contact number: +1021987654</h3>
+            <h3>Location: Saibaba Colony, Coimbatore</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
